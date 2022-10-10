@@ -1,26 +1,32 @@
 package EloBoardForFriend.asthu.entity;
 
-import java.text.DateFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-public class Datetime {
+import javax.persistence.MappedSuperclass;
+import java.time.LocalDateTime;
+@MappedSuperclass
+public abstract class Datetime {
 
-    private DateFormat create_at;
+    @CreationTimestamp
+    private LocalDateTime createAt;
 
-    private DateFormat update_at;
+    @UpdateTimestamp
+    private LocalDateTime updateAt;
 
-    public DateFormat getCreate_at() {
-        return create_at;
+    public LocalDateTime getCreateAt() {
+        return createAt;
     }
 
-    public void setCreate_at(DateFormat create_at) {
-        this.create_at = create_at;
+    public void setCreateAt(LocalDateTime createAt) {
+        this.createAt = createAt;
     }
 
-    public DateFormat getUpdate_at() {
-        return update_at;
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
     }
 
-    public void setUpdate_at(DateFormat update_at) {
-        this.update_at = update_at;
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 }

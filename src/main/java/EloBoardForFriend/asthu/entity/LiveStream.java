@@ -1,14 +1,15 @@
 package EloBoardForFriend.asthu.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "live_stream_list")
+@Table(name = "live_stream")
 public class LiveStream extends Datetime {
 
-    @Id
+    @Id @GeneratedValue
     private Long streamId;
 
     private String thumbnail;
