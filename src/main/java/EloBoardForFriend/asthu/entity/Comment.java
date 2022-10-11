@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Comment extends Datetime{
+public class Comment extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long commentId;

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "live_stream")
-public class LiveStream extends Datetime {
+public class LiveStream extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long streamId;

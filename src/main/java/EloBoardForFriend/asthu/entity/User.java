@@ -3,10 +3,9 @@ package EloBoardForFriend.asthu.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
-public class User extends Datetime{
+public class User extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long userId;

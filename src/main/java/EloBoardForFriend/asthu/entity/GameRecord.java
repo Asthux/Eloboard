@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "game_record")
-public class GameRecord extends Datetime{
+public class GameRecord extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long gameId;
