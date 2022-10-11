@@ -10,20 +10,20 @@ import javax.persistence.Table;
 public class LiveStream extends DateTimeEntity {
 
     @Id @GeneratedValue
-    private Long streamId;
+    private Long liveStreamId;
 
     private String thumbnail;
 
-    private String streamer;
+    private String Streamer;
 
-    private String streamTitle;
+    private String title;
 
-    public Long getStreamId() {
-        return streamId;
+    public Long getLiveStreamId() {
+        return liveStreamId;
     }
 
-    public void setStreamId(Long streamId) {
-        this.streamId = streamId;
+    public void setLiveStreamId(Long liveStreamId) {
+        this.liveStreamId = liveStreamId;
     }
 
     public String getThumbnail() {
@@ -35,18 +35,18 @@ public class LiveStream extends DateTimeEntity {
     }
 
     public String getStreamer() {
-        return streamer;
+        return Streamer;
     }
 
     public void setStreamer(String streamer) {
-        this.streamer = streamer;
+        Streamer = streamer;
     }
 
-    public String getStreamTitle() {
-        return streamTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setStreamTitle(String streamTitle) {
-        this.streamTitle = streamTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
