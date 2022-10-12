@@ -38,3 +38,6 @@ out/
 
 ### MacOS ###
 .DS_Store
+
+### DB 민감정보 ###
+application-config.properties
