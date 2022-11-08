@@ -1,11 +1,15 @@
 package EloBoardForFriend.asthu.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 @MappedSuperclass
+@Getter
+@Setter
 public abstract class DateTimeEntity {
 
     @CreationTimestamp
@@ -14,19 +18,4 @@ public abstract class DateTimeEntity {
     @UpdateTimestamp
     private LocalDateTime updateAt;
 
-    public LocalDateTime getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
-    }
-
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
 }

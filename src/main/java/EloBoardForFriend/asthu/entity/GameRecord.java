@@ -1,51 +1,32 @@
 package EloBoardForFriend.asthu.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "game_record")
 public class GameRecord extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long gameId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "map_id")
     private Map map;
 
     private String gameRecord;
 
-    public Long getGameId() {
-        return gameId;
-    }
+    @OneToMany(mappedBy = "gameRecord")
+    private List<GamePlayerInfo> gamePlayerInfo = new ArrayList<>();
 
-    public void setGameId(Long gameId) {
-        this.gameId = gameId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-
-    public String getGameRecord() {
-        return gameRecord;
-    }
-
-    public void setGameRecord(String gameRecord) {
-        this.gameRecord = gameRecord;
-    }
 }
