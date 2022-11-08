@@ -1,17 +1,22 @@
 package EloBoardForFriend.asthu.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Board extends DateTimeEntity {
 
     @Id @GeneratedValue
     private int boardId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     private String title;
@@ -20,43 +25,7 @@ public class Board extends DateTimeEntity {
 
     private String content;
 
-    public int getBoardId() {
-        return boardId;
-    }
+    @OneToMany(mappedBy = "board")
+    private List<Comment> comments = new ArrayList<>();
 
-    public void setBoardId(int boardId) {
-        this.boardId = boardId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public void setViews(int views) {
-        this.views = views;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 }
