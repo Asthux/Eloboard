@@ -29,7 +29,7 @@ public class UserServiceTest {
     public void 회원가입() throws Exception {
         //given
         User user = new User();
-        user.setName("asthu");
+        user.setName("testName");
         //when
         Long savedId = userService.join(user);
         //then
@@ -40,10 +40,10 @@ public class UserServiceTest {
     public void 중복_회원_예외() throws Exception {
         //given
         User user1 = new User();
-        user1.setUsername("asthu");
+        user1.setUsername("testName");
 
         User user2 = new User();
-        user2.setUsername("asthu");
+        user2.setUsername("testName");
 
         //when
         userService.join(user1);

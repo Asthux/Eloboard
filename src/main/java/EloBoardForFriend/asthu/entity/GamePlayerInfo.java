@@ -15,7 +15,7 @@ public class GamePlayerInfo extends DateTimeEntity {
     private Long playerInfoId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "game_id")
+    @JoinColumn(name = "game_record_id")
     private GameRecord gameRecord;
 
     private String player;

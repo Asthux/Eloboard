@@ -14,7 +14,7 @@ import java.util.List;
 public class GameRecord extends DateTimeEntity {
 
     @Id @GeneratedValue
-    private Long gameId;
+    private Long gameRecordId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
