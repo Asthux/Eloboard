@@ -1,10 +1,15 @@
 package EloBoardForFriend.asthu.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Getter
+@Setter
 public class Map extends DateTimeEntity {
 
     @Id @GeneratedValue
@@ -12,19 +17,4 @@ public class Map extends DateTimeEntity {
 
     private String name;
 
-    public Long getMapId() {
-        return mapId;
-    }
-
-    public void setMapId(Long mapId) {
-        this.mapId = mapId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

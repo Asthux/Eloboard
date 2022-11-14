@@ -1,10 +1,15 @@
 package EloBoardForFriend.asthu.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Getter
+@Setter
 public class User extends DateTimeEntity {
 
     @Id @GeneratedValue
@@ -12,39 +17,8 @@ public class User extends DateTimeEntity {
 
     private String password;
 
-    private String username;
+    private String username; // id
 
-    private String name;
+    private String name; // 이름
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
