@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Map extends Datetime{
+public class Map extends DateTimeEntity {
 
     @Id @GeneratedValue
     private Long mapId;

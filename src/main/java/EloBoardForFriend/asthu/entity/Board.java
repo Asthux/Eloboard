@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Board extends Datetime{
+public class Board extends DateTimeEntity {
 
     @Id @GeneratedValue
     private int boardId;
